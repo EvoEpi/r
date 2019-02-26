@@ -77,3 +77,5 @@ ggplot(data.sub, aes(x=log10(FPKM+1), fill=Tissue)) +
   xlab("Gene expression (log10(FPKM+1))") +
   ylab("Density") +
   theme_classic()
+#save plot
+ggsave("density.pdf", height=5, width=7, useDingbats=FALSE)
