@@ -2,7 +2,7 @@
 
 ## Differential gene expression
 
-The purpose of this lab is to get a better understanding of how to use the [edgeR](https://bioconductor.org/packages/release/bioc/html/edgeR.html) package. I will be using [Bewick, Ji, Niederhuth, Willing et al. (2016)](https://www.ncbi.nlm.nih.gov/pubmed/27457936) RNA-seq data for _Arabidopsis thaliana_ wild type and eighth-generation _met1_ epigenetic Recombinant Inbred Lines (epiRILs) ([Reinders et al. 2009](https://www.ncbi.nlm.nih.gov/pubmed/19390088)). BAM and GTF files are located in `files/`. I have chose to annotate the `R` script `edger.r` in `scripts/` because differential gene expression analysis is fairly involved.
+The purpose of this lab is to get a better understanding of how to use the [edgeR](https://bioconductor.org/packages/release/bioc/html/edgeR.html) package. I will be using [Bewick, Ji, Niederhuth, Willing et al. (2016)](https://www.ncbi.nlm.nih.gov/pubmed/27457936) RNA-seq data for _Arabidopsis thaliana_ wild type and eighth-generation _met1_ epigenetic Recombinant Inbred Lines (epiRILs) ([Reinders et al. 2009](https://www.ncbi.nlm.nih.gov/pubmed/19390088)). BAM and GTF files are located in `files/`. I have chosen to annotate the `R` script `edger.r` in `scripts/` because differential gene expression analysis is fairly involved.
 
 __Putting the data into the right format for edgeR.__ `edgeR` works on a table of integer read counts, with rows corresponding to genes and columns to independent libraries. `edgeR` stores data in a simple list-based data object called a `DGEList`. This type of object is easy to use because it can be manipulated like any list in `R`. You can make this in `R` by specifying the counts and the groups in the function `DGEList()`.
 
@@ -27,7 +27,7 @@ dataGroups<-c("met1", "met1", "met1", "wt", "wt", "wt")
 d<-DGEList(counts=cbind(fc$counts), genes=fc$annotation, group=factor(dataGroups))
 ```
 
-__Filtering teh data.__ First get rid of genes which did not occur frequently enough. Here the cutoff of 0.5 for the CPM has been chosen because it is roughly equal to 10/_L_ where _L_ is the minimum library size in millions. The library sizes here are 18–27 million. We used a round value of 0.5 just for simplicity; the exact value is not important because the downstream differential expression analysis is not sensitive to the small changes in this parameter. The requirement of ≥4 libraries is because each group contains three replicates. This ensures that a gene will be retained if it is expressed in both groups.
+__Filtering the data.__ First get rid of genes which did not occur frequently enough. Here the cutoff of 0.5 for the CPM has been chosen because it is roughly equal to 10/_L_ where _L_ is the minimum library size in millions. The library sizes here are 18–27 million. We used a round value of 0.5 just for simplicity; the exact value is not important because the downstream differential expression analysis is not sensitive to the small changes in this parameter. The requirement of ≥4 libraries is because each group contains three replicates. This ensures that a gene will be retained if it is expressed in both groups.
 
 ```
 dim(d)
