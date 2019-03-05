@@ -76,7 +76,7 @@ In addition to the common and tagwise disperson, we can also estimate a generali
 
 ```
 design.mat<-model.matrix(~ 0 + d$samples$group)
-colnames(design.mat) <- levels(d$samples$group)
+colnames(design.mat)<-levels(d$samples$group)
 d2<-estimateGLMCommonDisp(d,design.mat)
 d2<-estimateGLMTrendedDisp(d2,design.mat, method="auto")
 d2<-estimateGLMTagwiseDisp(d2,design.mat)
