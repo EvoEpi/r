@@ -13,3 +13,9 @@ Frequency of per-methylated site weighted methylation and number of methylated s
 <p align="center">
   <img src="https://github.com/EvoEpi/r/blob/master/plotting/plots/grid.png">
 </p>
+
+## Heatmap
+
+<p align="center">
+  <img src="https://github.com/EvoEpi/r/blob/master/plotting/plots/heatmap.png">
+</p>
