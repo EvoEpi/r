@@ -77,9 +77,9 @@ In addition to the common and tagwise disperson, we can also estimate a generali
 ```
 design.mat<-model.matrix(~ 0 + d$samples$group)
 colnames(design.mat) <- levels(d$samples$group)
-d2 <- estimateGLMCommonDisp(d,design.mat)
-d2 <- estimateGLMTrendedDisp(d2,design.mat, method="auto")
-d2 <- estimateGLMTagwiseDisp(d2,design.mat)
+d2<-estimateGLMCommonDisp(d,design.mat)
+d2<-estimateGLMTrendedDisp(d2,design.mat, method="auto")
+d2<-estimateGLMTagwiseDisp(d2,design.mat)
 plotBCV(d2)
 ```
 
@@ -100,17 +100,17 @@ summary(de1)
 The function `plotSmear` generates a plot of the tagwise log-fold-changes against log-cpm (analogous to an MA-plot for microarray data). DE tags are highlighted on the plot:
 
 ```
-de1tags12<-rownames(d1)[as.logical(de1)] 
-plotSmear(et, de.tags=de1tags12)
+de1tags<-rownames(d1)[as.logical(de1)] 
+plotSmear(et, de.tags=de1tags)
 abline(h = c(-2, 2), col = "blue")
 ```
 
 __GLM testing for differential expression.__ Just as we used a GLM to fit the trend line above, we can also use this in finding the tags that are interesting by using a likelihood ratio test.
 
 ```
-fit <- glmFit(d2, design.mat)
+fit<-glmFit(d2, design.mat)
 lrt<-glmLRT(fit, contrast=c(-1,1))
-de2 <- decideTestsDGE(lrt, adjust.method="BH", p.value = 0.05)
+de2<-decideTestsDGE(lrt, adjust.method="BH", p.value = 0.05)
 summary(de2)
 #       -1*met1 1*wt
 #Down            813
