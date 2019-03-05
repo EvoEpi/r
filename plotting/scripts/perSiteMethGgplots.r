@@ -56,9 +56,9 @@ p1<-ggplot(d.all, aes(x=per_site_wei, fill=geno)) +
   theme_classic()
 
 #count number of methylated sites per genotype per sequence context
-d.count<-count(d.all, c("geno", "con"))
+d.count<-d.all %>% group_by(geno) %>% count(con)
 
-p2<-ggplot(d.count, aes(y=freq, x=con, fill=geno)) +
+p2<-ggplot(d.count, aes(y=n, x=con, fill=geno)) +
   geom_bar(position="dodge", stat="identity") +
   scale_fill_manual(values=c("#aa0a3c","#005ac8"),
                     name="Genotype") +
