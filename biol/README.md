@@ -110,15 +110,15 @@ __GLM testing for differential expression.__ Just as we used a GLM to fit the tr
 ```
 fit<-glmFit(d2, design.mat)
 lrt<-glmLRT(fit, contrast=c(-1,1))
-de2<-decideTestsDGE(lrt, adjust.method="BH", p.value = 0.05)
+de2<-decideTestsDGE(lrt, adjust.method="BH", p.value=0.05)
 summary(de2)
 #       -1*met1 1*wt
 #Down            813
 #NotSig        17639
 #Up             1363
-de2tags12 <- rownames(d2)[as.logical(de2)]
-plotSmear(lrt, de.tags=de2tags12)
-abline(h = c(-2, 2), col = "blue")
+de2tags<-rownames(d2)[as.logical(de2)]
+plotSmear(lrt, de.tags=de2tags)
+abline(h = c(-2, 2), col="blue")
 ```
 
 ## Gene Ontology (GO) term enrichment
