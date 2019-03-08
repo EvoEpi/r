@@ -1,5 +1,17 @@
 # Plots
 
+## [Feature relative density](https://github.com/EvoEpi/r/blob/master/plotting/scripts/featRelDensity.r)
+
+<p align="center">
+  <img src="https://github.com/EvoEpi/r/blob/master/plotting/plots/featRelDensity.png">
+</p>
+
+## [Heatmap](https://github.com/EvoEpi/r/blob/master/plotting/scripts/rnaseqHeatmap.r)
+
+<p align="center">
+  <img src="https://github.com/EvoEpi/r/blob/master/plotting/plots/heatmap.png">
+</p>
+
 ## [Metaplot](https://github.com/EvoEpi/r/blob/master/plotting/scripts/metaplotGgplot.r)
 
 <p align="center">
@@ -18,10 +30,4 @@ __[WGBS.](https://github.com/EvoEpi/r/blob/master/plotting/scripts/perSiteMethGg
 
 <p align="center">
   <img src="https://github.com/EvoEpi/r/blob/master/plotting/plots/grid_wgbs.png">
-</p>
-
-## [Heatmap](https://github.com/EvoEpi/r/blob/master/plotting/scripts/rnaseqHeatmap.r)
-
-<p align="center">
-  <img src="https://github.com/EvoEpi/r/blob/master/plotting/plots/heatmap.png">
 </p>
