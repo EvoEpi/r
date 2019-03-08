@@ -1,6 +1,6 @@
 # Plots
 
-## [Feature relative density](https://github.com/EvoEpi/r/blob/master/plotting/scripts/featRelDensity.r)
+## [Feature relative density](https://github.com/EvoEpi/r/blob/master/plotting/scripts/featRelDensityGgplot.r)
 
 <p align="center">
   <img src="https://github.com/EvoEpi/r/blob/master/plotting/plots/featRelDensity.png">
