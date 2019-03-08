@@ -42,6 +42,8 @@ d.count$chr<-factor(d.count$chr, levels=c("Contig0", "Contig1", "Contig2", "Cont
 
 #divide start values by 1,000,000
 ggplot(d.count, aes(x=start/1000000, y=stdn, color=feature)) +
+  #use loess smoothing method (to generalize, a moving average)
+  #span controls the amount of smoothing (smaller == wigglier lines, larger == smoother lines)
   geom_smooth(span=0.1, method="loess") +
   scale_color_manual(values=c("#0ab45a", "#aa0a3c","#005ac8"),
                      name="Feature",
