@@ -2,7 +2,7 @@
 
 ## Differential gene expression
 
-The purpose of this lab is to get a better understanding of how to use the [edgeR](https://bioconductor.org/packages/release/bioc/html/edgeR.html) package. I will be using [Bewick, Ji, Niederhuth, Willing et al. (2016)](https://www.ncbi.nlm.nih.gov/pubmed/27457936) RNA-seq data for _Arabidopsis thaliana_ wild type and eighth-generation _met1_ epigenetic Recombinant Inbred Lines (epiRILs) ([Reinders et al. 2009](https://www.ncbi.nlm.nih.gov/pubmed/19390088)). BAM and GTF files can be generated following the [RNA-seq tutorial](https://github.com/EvoEpi/tutorials/tree/master/rnaseq/mrna). I have chosen to annotate the `R` script [edger.r](https://github.com/EvoEpi/r/blob/master/biol/scripts/edger.r) in `scripts/` because differential gene expression analysis is fairly involved. This tutorial was put together with the help of the [Stanford RNA-seq lab](https://web.stanford.edu/class/bios221/labs/rnaseq/lab_4_rnaseq.html) and [Chen et al. (2016)](https://www.ncbi.nlm.nih.gov/pubmed/27508061).
+__[edgeR](https://bioconductor.org/packages/release/bioc/html/edgeR.html).__ The purpose of this lab is to get a better understanding of how to use the `edgeR`. I will be using [Bewick, Ji, Niederhuth, Willing et al. (2016)](https://www.ncbi.nlm.nih.gov/pubmed/27457936) RNA-seq data for _Arabidopsis thaliana_ wild type and eighth-generation _met1_ epigenetic Recombinant Inbred Lines (epiRILs) ([Reinders et al. 2009](https://www.ncbi.nlm.nih.gov/pubmed/19390088)). BAM and GTF files can be generated following the [RNA-seq tutorial](https://github.com/EvoEpi/tutorials/tree/master/rnaseq/mrna). I have chosen to annotate the `R` script [edger.r](https://github.com/EvoEpi/r/blob/master/biol/scripts/edger.r) in `scripts/` because differential gene expression analysis is fairly involved. This tutorial was put together with the help of the [Stanford RNA-seq lab](https://web.stanford.edu/class/bios221/labs/rnaseq/lab_4_rnaseq.html) and [Chen et al. (2016)](https://www.ncbi.nlm.nih.gov/pubmed/27508061).
 
 __Putting the data into the right format for edgeR.__ `edgeR` works on a table of integer read counts, with rows corresponding to genes and columns to independent libraries. `edgeR` stores data in a simple list-based data object called a `DGEList`. This type of object is easy to use because it can be manipulated like any list in `R`. You can make this in `R` by specifying the counts and the groups in the function `DGEList()`.
 
@@ -120,6 +120,9 @@ de2tags<-rownames(d2)[as.logical(de2)]
 plotSmear(lrt, de.tags=de2tags)
 abline(h = c(-2, 2), col="blue")
 ```
+
+__[Ballgown](https://bioconductor.org/packages/release/bioc/html/ballgown.html).__ Coming soon.
+
 
 ## Gene Ontology (GO) term enrichment
 
